@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: radial-gradient(closest-side, #ffffff20 10%, transparent 10%);
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  background-color: #111827;
+}
+
+@font-face {
+  font-family: "AllFont";
+  src: url("https://file.qwq.link/font/zzaw.woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mono";
+  src: url("https://file.qwq.link/font/MonaspaceNeon-Light.woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "emoji-font";
+  src: url("https://file.qwq.link/font/seguiemj.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*:not([class*="icon"]):not(i) {
+  font-family: "Mono", "emoji-font";
+}
