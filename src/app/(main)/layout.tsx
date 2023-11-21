@@ -3,7 +3,7 @@ import HeadBar from "@/app/(main)/HeadBar";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col relative p-[20px]">
+    <div className="flex flex-col relative">
       <HeadBar />
       <div>{children}</div>
     </div>
