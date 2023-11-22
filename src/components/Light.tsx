@@ -1,7 +1,9 @@
 import { createRoot } from "react-dom/client";
 
 function Light() {
-  return <div className="blur-[20px] bg-white/20 h-[100px] w-[100px] rounded-full" />;
+  return (
+    <div className="blur-[20px] bg-white/20 h-[100px] w-[100px] rounded-full" />
+  );
 }
 
 let targetX: number = 0,
@@ -10,7 +12,6 @@ let targetX: number = 0,
   y: number = 0,
   ease: number = 0.05,
   rafId: number | null = null;
-  
 
 const moveByEase = (): { x: number; y: number } => {
   x += (targetX - x) * ease;
@@ -18,14 +19,21 @@ const moveByEase = (): { x: number; y: number } => {
   return { x, y };
 };
 
+const lightId = "the_light";
 const generate = (init?: { x: number; y: number }) => {
+  if (document.getElementById(lightId)) {
+    return;
+  }
+
   const div = document.createElement("div");
+  div.id = lightId;
   div.style.position = "fixed";
   div.style.pointerEvents = "none";
   div.style.left = (init?.x ?? window.innerWidth / 2) + "px";
   div.style.top = (init?.y ?? window.innerHeight / 2) + "px";
   div.style.transform = "translate(-50%, -50%)";
   div.style.transition = "transform 0.7s ease, opacity 0.7s ease";
+  div.style.zIndex = "9";
   createRoot(div).render(<Light />);
   document.body.appendChild(div);
 
