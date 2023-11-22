@@ -155,25 +155,60 @@ export default function HomeInfo() {
         <InfoItem key={index} dealy={index * 0.05} child={item} />
       ))}
       <div className="flex gap-[20px] items-center mt-[20px]">
-        {links.map((item, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.5 }}
-            onHoverStart={e => {}}
-            onHoverEnd={e => {}}
-          >
-            <Image
-              src={item.icon}
-              alt="me"
-              width="24"
-              height="24"
-              className="cursor-pointer"
-              onClick={() => {
-                window.open(item.to);
-              }}
-            />
-          </motion.div>
-        ))}
+        {/* {links.map((item, index) => (
+          
+        ))} */}
+
+        <motion.div
+          whileHover={{ scale: 1.5 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <Image
+            src={`/github.svg`}
+            alt="me"
+            width="24"
+            height="24"
+            className="cursor-pointer"
+            onClick={() => {
+              window.open(`https://github.com/AceXiamo`);
+            }}
+          />
+        </motion.div>
+
+        <motion.div
+          whileHover={{ scale: 1.5 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <Image
+            src={`/twitter.svg`}
+            alt="me"
+            width="24"
+            height="24"
+            className="cursor-pointer"
+            onClick={() => {
+              window.open(`https://twitter.com/AceXiamo`);
+            }}
+          />
+        </motion.div>
+
+        <motion.div
+          whileHover={{ scale: 1.5 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+          <Image
+            src={`/bilibili.svg`}
+            alt="me"
+            width="24"
+            height="24"
+            className="cursor-pointer"
+            onClick={() => {
+              window.open(`https://space.bilibili.com/17906193`);
+            }}
+          />
+        </motion.div>
       </div>
     </>
   );

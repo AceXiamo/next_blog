@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <div className="flex flex-col relative overflow-x-hidden">
       {/* <HeadBar /> */}
-      <motion.div
+      {/* <motion.div
         key={pathname}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -28,7 +28,8 @@ export default function RootLayout({
         transition={{ ease: "easeInOut", duration: 0.3 }}
       >
         {children}
-      </motion.div>
+      </motion.div> */}
+      {children}
     </div>
   );
 }
