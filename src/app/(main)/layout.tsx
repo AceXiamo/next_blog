@@ -19,7 +19,7 @@ export default function RootLayout({
 
   return (
     <div className="flex flex-col relative overflow-x-hidden">
-      <HeadBar />
+      {/* <HeadBar /> */}
       <motion.div
         key={pathname}
         initial={{ opacity: 0 }}
