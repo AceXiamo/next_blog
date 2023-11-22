@@ -7,7 +7,7 @@ function Info_1() {
   return (
     <>
       <div className="text-[14px] text-white/80 leading-10">
-        {"I'm `AceXiamo`, you can call me [夏末]"}
+        {"I'm `AceXiamo`, you can call me [夏末 / xiamo]."}
       </div>
     </>
   );
@@ -17,13 +17,12 @@ function Info_2() {
   return (
     <>
       <div className="text-[14px] text-white/80 leading-10 flex items-center">
-        <span>{"I'm a full-stack developer, "}</span>
-        <span className="ml-[10px]">with some knowledge in</span>
         <div
-          className="flex items-center ml-3 gap-[6px] 
+          className="flex items-center gap-[6px] 
           relative hover:before:w-[100%]
           before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] 
-          before:w-0 before:bg-emerald-500 before:transition-all before:duration-300
+          before:w-0 before:bg-violet-500 before:transition-all before:duration-300
+          before:blur-[2px]
         "
         >
           <Icon icon="logos:java" />
@@ -33,7 +32,8 @@ function Info_2() {
           className="flex items-center ml-2 gap-[6px]
           relative hover:before:w-[100%]
           before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] 
-          before:w-0 before:bg-emerald-500 before:transition-all before:duration-300
+          before:w-0 before:bg-blue-500 before:transition-all before:duration-300
+          before:blur-[2px]
         "
         >
           <Icon icon="logos:typescript-icon" />
@@ -43,7 +43,8 @@ function Info_2() {
           className="flex items-center ml-2 gap-[6px]
           relative hover:before:w-[100%]
           before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] 
-          before:w-0 before:bg-emerald-500 before:transition-all before:duration-300
+          before:w-0 before:bg-sky-500 before:transition-all before:duration-300
+          before:blur-[2px]
         "
         >
           <Icon icon="logos:go" />
@@ -54,6 +55,7 @@ function Info_2() {
           relative hover:before:w-[100%]
           before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] 
           before:w-0 before:bg-emerald-500 before:transition-all before:duration-300
+          before:blur-[2px]
         "
         >
           <Icon icon="logos:vue" />
@@ -63,22 +65,13 @@ function Info_2() {
           className="flex items-center ml-2 gap-[6px]
           relative hover:before:w-[100%]
           before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] 
-          before:w-0 before:bg-emerald-500 before:transition-all before:duration-300
+          before:w-0 before:bg-purple-500 before:transition-all before:duration-300
+          before:blur-[2px]
         "
         >
           <Icon icon="logos:react" />
           <span>React</span>
         </div>
-      </div>
-    </>
-  );
-}
-
-function Info_3() {
-  return (
-    <>
-      <div className="text-[14px] text-white/80 leading-10">
-        {"My hobby is coding. I hope to do something meaningful with this."}
       </div>
     </>
   );
@@ -115,7 +108,7 @@ function InfoItem({
           duration: 0.5,
           delay: dealy,
         }}
-        className="flex flex-col gap-[10px]"
+        className="flex flex-col gap-[10px] max-w-[600px]"
       >
         {component}
       </motion.div>
@@ -134,9 +127,11 @@ export default function HomeInfo() {
   const arr = [
     "Hello 👋",
     Info_1(),
+    "I'm a full-stack developer, but I might prefer front-end development over back-end, I hope to do something meaningful with this.",
     Info_2(),
-    Info_3(),
-    "And, You can find me on ...",
+    "In my free time, I learn English on Duolingo, and have been doing so up until now.",
+    "I also like anime, and I've watched a lot of them, such as 'Steins;Gate', 'Clannad', 'Attack on Titan', and so on.",
+    "Maybe, You can find me on ...",
   ];
 
   const links = [
@@ -157,21 +152,27 @@ export default function HomeInfo() {
   return (
     <>
       {arr.map((item, index) => (
-        <InfoItem key={index} dealy={index * 0.1} child={item} />
+        <InfoItem key={index} dealy={index * 0.05} child={item} />
       ))}
       <div className="flex gap-[20px] items-center mt-[20px]">
         {links.map((item, index) => (
-          <Image
+          <motion.div
             key={index}
-            src={item.icon}
-            alt="me"
-            width="24"
-            height="24"
-            className="cursor-pointer"
-            onClick={() => {
-              window.open(item.to);
-            }}
-          />
+            whileHover={{ scale: 1.5 }}
+            onHoverStart={e => {}}
+            onHoverEnd={e => {}}
+          >
+            <Image
+              src={item.icon}
+              alt="me"
+              width="24"
+              height="24"
+              className="cursor-pointer"
+              onClick={() => {
+                window.open(item.to);
+              }}
+            />
+          </motion.div>
         ))}
       </div>
     </>
