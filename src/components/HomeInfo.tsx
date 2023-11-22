@@ -164,12 +164,8 @@ export default function HomeInfo() {
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-          <Image
-            src={`/github.svg`}
-            alt="me"
-            width="24"
-            height="24"
-            className="cursor-pointer"
+          <Icon
+            icon="logos:github-octocat"
             onClick={() => {
               window.open(`https://github.com/AceXiamo`);
             }}
@@ -181,31 +177,10 @@ export default function HomeInfo() {
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-          <Image
-            src={`/twitter.svg`}
-            alt="me"
-            width="24"
-            height="24"
-            className="cursor-pointer"
+          <Icon
+            icon="logos:twitter"
             onClick={() => {
               window.open(`https://twitter.com/AceXiamo`);
-            }}
-          />
-        </motion.div>
-
-        <motion.div
-          whileHover={{ scale: 1.5 }}
-          onHoverStart={e => {}}
-          onHoverEnd={e => {}}
-        >
-          <Image
-            src={`/bilibili.svg`}
-            alt="me"
-            width="24"
-            height="24"
-            className="cursor-pointer"
-            onClick={() => {
-              window.open(`https://space.bilibili.com/17906193`);
             }}
           />
         </motion.div>
